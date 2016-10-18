@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -94,7 +94,7 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
 <meta property="og:description" content="强大的sorted语法sorted(iterable[, cmp[, key[, reverse]]])sort([cmp[, key[, reverse]]])
 cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函数，用来为每个元素提取比较值
 实战对字典排序123phonebook = &amp;#123;&apos;Linda&apos;: &apos;7790&apos;, &apos;Bob&apos;:&apos;9876&apos;, &apos;Carol&apos;:&apos;67">
-<meta property="og:updated_time" content="2016-10-18T14:31:59.271Z">
+<meta property="og:updated_time" content="2016-10-18T14:49:24.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强大的sorted">
 <meta name="twitter:description" content="强大的sorted语法sorted(iterable[, cmp[, key[, reverse]]])sort([cmp[, key[, reverse]]])
@@ -106,13 +106,13 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -126,7 +126,7 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
   <title> 强大的sorted | Blog </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -179,7 +179,19 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Startseite
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -187,7 +199,9 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archiv
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -195,7 +209,9 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-            Tags
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -203,7 +219,9 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <li class="menu-item menu-item-schedule">
           <a href="/schedule" rel="section">
             
-            Schedule
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程
           </a>
         </li>
       
@@ -256,12 +274,31 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-10-16T22:33:57+08:00" content="2016-10-16">
               2016-10-16
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -327,12 +364,16 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/16/my-first-blog/" rel="next" title="my-first-blog">
+                <i class="fa fa-chevron-left"></i> my-first-blog
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/16/my-first-blog/" rel="prev" title="my-first-blog">
-                my-first-blog <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/18/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -382,10 +423,10 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -394,24 +435,24 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="shaun" />
+          <p class="site-author-name" itemprop="name">shaun</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Kategorien</span>
-              
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
             </div>
           
 
@@ -419,7 +460,7 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -470,17 +511,17 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">shaun</span>
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -545,6 +586,13 @@ cmp: 比较函数，参数为两个可比较的参数key: 带一个参数的函�
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
