@@ -84,12 +84,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://yoursite.com/2016/10/18/hello-world/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
+<meta property="og:updated_time" content="2016-10-18T13:51:28.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 
 
 
@@ -110,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/18/hello-world/"/>
 
 
-  <title> Hexo </title>
+  <title> Hello World | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="">
@@ -134,9 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -215,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,116 +242,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/18/python-sort/" itemprop="url">
-                  Unbenannt
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-18T22:26:49+08:00" content="2016-10-18">
-              2016-10-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p> title: 强大的sorted<br> tags: python</p>
-<h2 id="date-2016-10-16-22-33-57"><a href="#date-2016-10-16-22-33-57" class="headerlink" title=" date: 2016-10-16 22:33:57"></a> date: 2016-10-16 22:33:57</h2><h3 id="强大的sorted"><a href="#强大的sorted" class="headerlink" title="强大的sorted"></a>强大的sorted</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>sorted(iterable[, cmp[, key[, reverse]]])<br>sort([cmp[, key[, reverse]]])</p>
-<p>cmp: 比较函数，参数为两个可比较的参数<br>key: 带一个参数的函数，用来为每个元素提取比较值</p>
-<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><h4 id="对字典排序"><a href="#对字典排序" class="headerlink" title="对字典排序"></a>对字典排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">phonebook = &#123;<span class="string">'Linda'</span>: <span class="string">'7790'</span>, <span class="string">'Bob'</span>:<span class="string">'9876'</span>, <span class="string">'Carol'</span>:<span class="string">'6754'</span>&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted_pb = sorted(phonebook.iteritems(), key = itemgetter(<span class="number">1</span>))</div></pre></td></tr></table></figure>
-<h4 id="多维-list-排序"><a href="#多维-list-排序" class="headerlink" title="多维 list 排序"></a>多维 list 排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">gameresult = [[<span class="string">'Bob'</span>, <span class="number">95</span>, <span class="string">'A'</span>], [<span class="string">'Alan'</span>, <span class="number">86</span>, <span class="string">'B'</span>]] <span class="comment">## 分别代表学生的姓名，成绩，等级</span></div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="number">2</span>, <span class="number">1</span>))</div></pre></td></tr></table></figure>
-<p>按照等级排序，等级相同时，按成绩排序</p>
-<h4 id="字典混合-list-排序"><a href="#字典混合-list-排序" class="headerlink" title="字典混合 list 排序"></a>字典混合 list 排序</h4><p>对字典 my_dict 的 value 结构 [n, m] 中的 m 按照从小到大排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my_dict = &#123; <span class="string">'Li'</span>:[<span class="string">'A'</span>,<span class="number">1</span>],</div><div class="line">            <span class="string">'Zhang'</span>:[<span class="string">'B'</span>,<span class="number">2</span>]&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(my_dict.iteritems(), key = <span class="keyword">lambda</span> (k,v):operator.itemgetter(<span class="number">1</span>)(v))</div></pre></td></tr></table></figure></p>
-<h4 id="List-混合字典排序"><a href="#List-混合字典排序" class="headerlink" title="List 混合字典排序"></a>List 混合字典排序</h4><p>按照 list 中 rating 和 name 进行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gameresult = [&#123;<span class="string">"name"</span>:<span class="string">"Bob"</span>, <span class="string">"wins"</span>:<span class="number">10</span>, <span class="string">"losses"</span>:<span class="number">3</span>, <span class="string">"rating"</span>:<span class="number">75</span>&#125;,</div><div class="line">                             &#123;<span class="string">"name"</span>:<span class="string">"David"</span>, <span class="string">"wins"</span>:<span class="number">3</span>, <span class="string">"losses"</span>:<span class="number">10</span>, <span class="string">"rating"</span>:<span class="number">50</span>&#125;]</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="string">"rating"</span>, <span class="string">'name'</span>))</div></pre></td></tr></table></figure></p>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ul>
-<li>sort() 不需要复制原有列表，消耗内存较少，效率较高，不需要保存原有列表，可以选择 sort()</li>
-<li>key 比 cmp 效率更高</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/18/hello-world/" itemprop="url">
-                  Hello World
-                </a>
+                Hello World
               
             
           </h1>
@@ -386,9 +282,7 @@
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -398,16 +292,20 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -415,134 +313,36 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/16/my-first-blog/" rel="next" title="my-first-blog">
+                <i class="fa fa-chevron-left"></i> my-first-blog
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/10/16/my-first-blog/" itemprop="url">
-                  my-first-blog
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-16T22:33:57+08:00" content="2016-10-16">
-              2016-10-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/test/" itemprop="url" rel="index">
-                    <span itemprop="name">test</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
+              <a href="/2016/10/18/python-sort/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <blockquote>
-<p>编写高质量代码</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -550,6 +350,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -569,8 +373,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -620,6 +433,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -716,6 +540,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
