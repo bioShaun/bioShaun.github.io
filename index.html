@@ -179,7 +179,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/public/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -189,7 +189,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/public/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -199,7 +199,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/public/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -464,7 +464,7 @@
               
                 
                 <a class="post-title-link" href="/2016/10/16/python-sort/" itemprop="url">
-                  强大的sorted
+                  强大的sort
                 </a>
               
             
@@ -526,7 +526,7 @@
       
         
           
-            <h3 id="强大的sorted"><a href="#强大的sorted" class="headerlink" title="强大的sorted"></a>强大的sorted</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>sorted(iterable[, cmp[, key[, reverse]]])<br>sort([cmp[, key[, reverse]]])</p>
+            <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>sorted(iterable[, cmp[, key[, reverse]]])<br>sort([cmp[, key[, reverse]]])</p>
 <p>cmp: 比较函数，参数为两个可比较的参数<br>key: 带一个参数的函数，用来为每个元素提取比较值</p>
 <h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><h4 id="对字典排序"><a href="#对字典排序" class="headerlink" title="对字典排序"></a>对字典排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">phonebook = &#123;<span class="string">'Linda'</span>: <span class="string">'7790'</span>, <span class="string">'Bob'</span>:<span class="string">'9876'</span>, <span class="string">'Carol'</span>:<span class="string">'6754'</span>&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted_pb = sorted(phonebook.iteritems(), key = itemgetter(<span class="number">1</span>))</div></pre></td></tr></table></figure>
 <h4 id="多维-list-排序"><a href="#多维-list-排序" class="headerlink" title="多维 list 排序"></a>多维 list 排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">gameresult = [[<span class="string">'Bob'</span>, <span class="number">95</span>, <span class="string">'A'</span>], [<span class="string">'Alan'</span>, <span class="number">86</span>, <span class="string">'B'</span>]] <span class="comment">## 分别代表学生的姓名，成绩，等级</span></div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="number">2</span>, <span class="number">1</span>))</div></pre></td></tr></table></figure>
@@ -598,14 +598,14 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/uploads/blog.png"
                alt="shaun" />
           <p class="site-author-name" itemprop="name">shaun</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/archives">
+            <a href="/public/archives">
               <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
@@ -613,7 +613,7 @@
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/public/categories">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -622,7 +622,7 @@
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/public/tags">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
