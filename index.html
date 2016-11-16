@@ -246,6 +246,131 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/16/python-ConfigParser/" itemprop="url">
+                  ConfigParser
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-16T00:00:00+08:00" content="2016-11-16">
+              2016-11-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ConfigParser</div><div class="line"></div><div class="line">config = ConfigParser.ConfigParser()</div><div class="line">config.read(<span class="string">'example.cfg'</span>)</div><div class="line"></div><div class="line"><span class="comment"># Set the third, optional argument of get to 1 if you wish to use raw mode.</span></div><div class="line"><span class="keyword">print</span> config.get(<span class="string">'Section1'</span>, <span class="string">'foo'</span>, <span class="number">0</span>)  <span class="comment"># -&gt; "Python is fun!"</span></div><div class="line"><span class="keyword">print</span> config.get(<span class="string">'Section1'</span>, <span class="string">'foo'</span>, <span class="number">1</span>)  <span class="comment"># -&gt; "%(bar)s is %(baz)s!"</span></div><div class="line"></div><div class="line"><span class="comment"># The optional fourth argument is a dict with members that will take</span></div><div class="line"><span class="comment"># precedence in interpolation.</span></div><div class="line"><span class="keyword">print</span> config.get(<span class="string">'Section1'</span>, <span class="string">'foo'</span>, <span class="number">0</span>, &#123;<span class="string">'bar'</span>: <span class="string">'Documentation'</span>,</div><div class="line">                                        <span class="string">'baz'</span>: <span class="string">'evil'</span>&#125;)</div></pre></td></tr></table></figure>
+<h4 id="advanced"><a href="#advanced" class="headerlink" title="advanced"></a>advanced</h4><h5 id="getboolean"><a href="#getboolean" class="headerlink" title="getboolean()"></a>getboolean()</h5><p>getboolean() 可以将值转换为布尔值。</p>
+<p>如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[section1]</div><div class="line">option1 = <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<p>当调用 getboolean(‘section1’, ‘option1’)，返回 False。<br>yes/no、true/false、on/off 会进行相应转换。</p>
+<h5 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title="[DEFAULT]"></a>[DEFAULT]</h5><p>当读取的配置项不在指定节中，会到 [DEFAULT] 节中查找</p>
+<p>ConfigParser 支持字符串格式化</p>
+<p>format.conf 如下所示<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[DEFAULT]</div><div class="line">conn_str = %(dbn)s://%(pw)s@%(host)s:%(port)s/%(db)s</div><div class="line">dbn = mysql</div><div class="line">user = root</div><div class="line">host = localhost</div><div class="line">port = <span class="number">3306</span></div><div class="line"></div><div class="line">[db1]</div><div class="line">user = aaa</div><div class="line">pw = ppp</div><div class="line">db = example</div></pre></td></tr></table></figure></p>
+<p>python 脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ConfigParser</div><div class="line">conf = ConfigParser.ConfigParser()</div><div class="line">conf.read(<span class="string">'format.conf'</span>)</div><div class="line"><span class="keyword">print</span> conf.get(<span class="string">'db1'</span>, <span class="string">'conn_str'</span>)</div></pre></td></tr></table></figure></p>
+<p>运行脚本，输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql://aaa:ppp@localhost:<span class="number">3306</span>/example</div></pre></td></tr></table></figure>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><ul>
+<li>可以使用 # 或 ; 对config 文件进行注释</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/18/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -299,121 +424,6 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/16/my-first-blog/" itemprop="url">
-                  my-first-blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-16T22:33:57+08:00" content="2016-10-16">
-              2016-10-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/test/" itemprop="url" rel="index">
-                    <span itemprop="name">test</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>编写高质量代码</p>
-</blockquote>
 
           
         
@@ -565,6 +575,121 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/16/my-first-blog/" itemprop="url">
+                  my-first-blog
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-16T22:33:57+08:00" content="2016-10-16">
+              2016-10-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/test/" itemprop="url" rel="index">
+                    <span itemprop="name">test</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>编写高质量代码</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -606,7 +731,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
