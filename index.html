@@ -246,6 +246,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/16/python-字符串格式化输入/" itemprop="url">
+                  字符串格式化输入
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-16T00:00:00+08:00" content="2016-12-16">
+              2016-12-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="BASIC"><a href="#BASIC" class="headerlink" title="BASIC"></a>BASIC</h4><p>通过通过和关键字参数调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">template = <span class="string">'&#123;0&#125;, &#123;1&#125; and &#123;2&#125;'</span></div><div class="line">template.format(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)  <span class="comment">## by position</span></div><div class="line"></div><div class="line">template = <span class="string">'&#123;motto&#125;, &#123;pork&#125; and &#123;food&#125;'</span></div><div class="line">template.format(motto = <span class="string">'spam'</span>, pork = <span class="string">'ham'</span>, food = <span class="string">'eggs'</span>) <span class="comment">## by keywork</span></div><div class="line"></div><div class="line">template = <span class="string">'&#123;motto&#125;, &#123;0&#125; and &#123;food&#125;'</span></div><div class="line">template.format(<span class="string">'ham'</span>, motto = <span class="string">'spam'</span>, food = <span class="string">'eggs'</span>) <span class="comment">## by both</span></div></pre></td></tr></table></figure>
+<h4 id="添加键、属性和偏移量"><a href="#添加键、属性和偏移量" class="headerlink" title="添加键、属性和偏移量"></a>添加键、属性和偏移量</h4><p>键值和属性<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="string">'My &#123;1[spam]&#125; runs &#123;0.platform&#125;'</span>.format(sys, &#123;<span class="string">'spam'</span>:<span class="string">'laptop'</span>&#125;)</div></pre></td></tr></table></figure></p>
+<p><br><br>偏移量 (正的偏移量才能在格式化字符串的语法中有效)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">somelist = list(<span class="string">'SPAM'</span>)</div><div class="line"><span class="string">'first=&#123;0[0]&#125;, third=&#123;0[2]&#125;'</span>.format(somelist)</div></pre></td></tr></table></figure>
+<h4 id="添加具体格式化"><a href="#添加具体格式化" class="headerlink" title="添加具体格式化"></a>添加具体格式化</h4><p>{fieldname!conversionflag:formatspec}</p>
+<ul>
+<li>fieldname：指定参数的一个数字或关键字</li>
+<li>conversionflag：可以是r、s，或者分别是改值上对repr、str或ascii内置函数的一次调用</li>
+<li>formatspec：指定如何表示改值，包括字段宽度、对齐方式、补零、小数点精度等，形式如：[[fill]align[sign][#][0][width][.precision][typecode]]</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/16/python-ConfigParser/" itemprop="url">
                   ConfigParser
                 </a>
@@ -731,7 +854,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
