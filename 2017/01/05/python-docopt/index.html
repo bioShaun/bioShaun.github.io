@@ -1,0 +1,662 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="What’s docopt
+根据说明文档解析命令行参数  (generate option parser based on the beautiful help message)
+
+example12345678910111213141516171819202122232425&quot;&quot;&quot;Naval Fate.Usage:  naval_fate.py ship new &amp;lt;name&amp;gt;...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docopt creates beautiful command-line interfaces">
+<meta property="og:url" content="http://yoursite.com/2017/01/05/python-docopt/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="What’s docopt
+根据说明文档解析命令行参数  (generate option parser based on the beautiful help message)
+
+example12345678910111213141516171819202122232425&quot;&quot;&quot;Naval Fate.Usage:  naval_fate.py ship new &amp;lt;name&amp;gt;...">
+<meta property="og:updated_time" content="2017-01-07T02:47:12.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docopt creates beautiful command-line interfaces">
+<meta name="twitter:description" content="What’s docopt
+根据说明文档解析命令行参数  (generate option parser based on the beautiful help message)
+
+example12345678910111213141516171819202122232425&quot;&quot;&quot;Naval Fate.Usage:  naval_fate.py ship new &amp;lt;name&amp;gt;...">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/05/python-docopt/"/>
+
+
+  <title> docopt creates beautiful command-line interfaces | Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">up & up & up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                docopt creates beautiful command-line interfaces
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-05T00:00:00+08:00" content="2017-01-05">
+              2017-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="What’s-docopt"><a href="#What’s-docopt" class="headerlink" title="What’s docopt"></a>What’s docopt</h4><blockquote>
+<p>根据说明文档解析命令行参数  (generate option parser based on the beautiful help message)</p>
+</blockquote>
+<p>example<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"""Naval Fate.</span></div><div class="line"></div><div class="line">Usage:</div><div class="line">  naval_fate.py ship new &lt;name&gt;...</div><div class="line">  naval_fate.py ship &lt;name&gt; move &lt;x&gt; &lt;y&gt; [--speed=&lt;kn&gt;]</div><div class="line">  naval_fate.py ship shoot &lt;x&gt; &lt;y&gt;</div><div class="line">  naval_fate.py mine (set|remove) &lt;x&gt; &lt;y&gt; [--moored | --drifting]</div><div class="line">  naval_fate.py (-h | --help)</div><div class="line">  naval_fate.py --version</div><div class="line"></div><div class="line">Options:</div><div class="line">  -h --help     Show this screen.</div><div class="line">  --version     Show version.</div><div class="line">  --speed=&lt;kn&gt;  Speed in knots [default: 10].</div><div class="line">  --moored      Moored (anchored) mine.</div><div class="line">  --drifting    Drifting mine.</div><div class="line"></div><div class="line">"""</div><div class="line"><span class="keyword">from</span> docopt <span class="keyword">import</span> docopt</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    arguments = docopt(__doc__, version=<span class="string">'Naval Fate 2.0'</span>)</div><div class="line">    print(arguments)</div></pre></td></tr></table></figure></p>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> docopt <span class="keyword">import</span> docopt</div><div class="line"></div><div class="line">docopt(doc, argv=<span class="keyword">None</span>, help=<span class="keyword">True</span>, version=<span class="keyword">None</span>, options_first=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>返回值是由选项，参数或命令作为键值的字典。(The return value is a simple dictionary with options, arguments and commands as keys, spelled exactly like in your help message)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">naval_fate.py ship Guardian move <span class="number">100</span> <span class="number">150</span> --speed=<span class="number">15</span></div><div class="line"></div><div class="line">&#123;<span class="string">'--drifting'</span>: <span class="keyword">False</span>,    <span class="string">'mine'</span>: <span class="keyword">False</span>,</div><div class="line"> <span class="string">'--help'</span>: <span class="keyword">False</span>,        <span class="string">'move'</span>: <span class="keyword">True</span>,</div><div class="line"> <span class="string">'--moored'</span>: <span class="keyword">False</span>,      <span class="string">'new'</span>: <span class="keyword">False</span>,</div><div class="line"> <span class="string">'--speed'</span>: <span class="string">'15'</span>,        <span class="string">'remove'</span>: <span class="keyword">False</span>,</div><div class="line"> <span class="string">'--version'</span>: <span class="keyword">False</span>,     <span class="string">'set'</span>: <span class="keyword">False</span>,</div><div class="line"> <span class="string">'&lt;name&gt;'</span>: [<span class="string">'Guardian'</span>], <span class="string">'ship'</span>: <span class="keyword">True</span>,</div><div class="line"> <span class="string">'&lt;x&gt;'</span>: <span class="string">'100'</span>,           <span class="string">'shoot'</span>: <span class="keyword">False</span>,</div><div class="line"> <span class="string">'&lt;y&gt;'</span>: <span class="string">'150'</span>&#125;</div></pre></td></tr></table></figure>
+<h4 id="帮助文档格式"><a href="#帮助文档格式" class="headerlink" title="帮助文档格式"></a>帮助文档格式</h4><blockquote>
+<p>帮助文档由用法 (Usage) 和选项 (Options) 两部分组成。</p>
+</blockquote>
+<h5 id="用法格式"><a href="#用法格式" class="headerlink" title="用法格式"></a>用法格式</h5><blockquote>
+<p>用法是脚本文档的一部分，以 usage 开始 （大小写不敏感），以空行结束。</p>
+</blockquote>
+<p>组成元素包括：</p>
+<ul>
+<li>&lt; arguments &gt; ，参数用大写或用尖括号括起表示。</li>
+<li>-options，选项以连接号 （-）起始的字符表示，单字母的选项可以共用一个连接符，例如：-vof 等同于 -v -o -f。选项后可以添加参数，–input=FILE ， -i FILE 或者 -iFILE。</li>
+<li>commands </li>
+</ul>
+<p>格式：</p>
+<ul>
+<li>“[]” 代表可选元素</li>
+<li>“( )” 代表必须元素，任何不放在”[]”中的，也是必须元素</li>
+<li>“|” 代表互斥元素</li>
+<li>“…” 代表一个或更多元素</li>
+<li>“[–]” ，使用 “- -“ 分隔位置参数，启用此功能需要在 usage 中添加 “[- -]”</li>
+<li>“[-]”，代表使用标准输入作为脚本输入，启用此功能在 usage 中添加 “[-]”</li>
+</ul>
+<h5 id="选项格式"><a href="#选项格式" class="headerlink" title="选项格式"></a>选项格式</h5><blockquote>
+<p>选项说明位于用法说明下方，在以下情况，选项说明是必要的：</p>
+</blockquote>
+<ul>
+<li>选项有长，短两种写法</li>
+<li>选项有参数</li>
+<li>选项有默认值</li>
+</ul>
+<p>选项写作规则如下：</p>
+<ul>
+<li>以 - 或 - - 作为起始（不包括空格）</li>
+<li><p>使用空格或等号添加选项的参数，参数用大学字母或用尖角符括起表示，可以使用逗号分隔选项，eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-o FILE --output=FILE       <span class="comment"># without comma, with "=" sign</span></div><div class="line">-i &lt;file&gt;, --input &lt;file&gt;   <span class="comment"># with comma, without "=" sing</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用两个及以上的空格分隔选项和选项说明</p>
+</li>
+<li><p>设置默认值的格式为：”[default: &lt; my-default-value&gt;]”，eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">--coefficient=K  The K coefficient [default: <span class="number">2.95</span>]</div><div class="line">--output=FILE    Output file [default: test.txt]</div><div class="line">--directory=DIR  Some directory [default: ./]</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果选项不可重复，默认值被认为是字符串，否则会将默认值以空格拆分为列表。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/16/python-字符串格式化输入/" rel="next" title="字符串格式化输入">
+                <i class="fa fa-chevron-left"></i> 字符串格式化输入
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/blog.png"
+               alt="shaun" />
+          <p class="site-author-name" itemprop="name">shaun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#What’s-docopt"><span class="nav-number">1.</span> <span class="nav-text">What’s docopt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">2.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帮助文档格式"><span class="nav-number">3.</span> <span class="nav-text">帮助文档格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用法格式"><span class="nav-number">3.1.</span> <span class="nav-text">用法格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选项格式"><span class="nav-number">3.2.</span> <span class="nav-text">选项格式</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shaun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
