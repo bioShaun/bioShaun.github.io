@@ -397,108 +397,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/16/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-16T17:30:26+08:00" content="2017-04-16">
-              2017-04-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2017/01/05/python-docopt/" itemprop="url">
                   docopt creates beautiful command-line interfaces
                 </a>
@@ -911,6 +809,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/17/python-sort/" itemprop="url">
+                  强大的sort
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-17T22:33:57+08:00" content="2016-10-17">
+              2016-10-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>sorted(iterable[, cmp[, key[, reverse]]])<br>sort([cmp[, key[, reverse]]])</p>
+<p>cmp: 比较函数，参数为两个可比较的参数<br>key: 带一个参数的函数，用来为每个元素提取比较值</p>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><h4 id="对字典排序"><a href="#对字典排序" class="headerlink" title="对字典排序"></a>对字典排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">phonebook = &#123;<span class="string">'Linda'</span>: <span class="string">'7790'</span>, <span class="string">'Bob'</span>:<span class="string">'9876'</span>, <span class="string">'Carol'</span>:<span class="string">'6754'</span>&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted_pb = sorted(phonebook.iteritems(), key = itemgetter(<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<h4 id="多维-list-排序"><a href="#多维-list-排序" class="headerlink" title="多维 list 排序"></a>多维 list 排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">gameresult = [[<span class="string">'Bob'</span>, <span class="number">95</span>, <span class="string">'A'</span>], [<span class="string">'Alan'</span>, <span class="number">86</span>, <span class="string">'B'</span>]] <span class="comment">## 分别代表学生的姓名，成绩，等级</span></div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="number">2</span>, <span class="number">1</span>))</div></pre></td></tr></table></figure>
+<p>按照等级排序，等级相同时，按成绩排序</p>
+<h4 id="字典混合-list-排序"><a href="#字典混合-list-排序" class="headerlink" title="字典混合 list 排序"></a>字典混合 list 排序</h4><p>对字典 my_dict 的 value 结构 [n, m] 中的 m 按照从小到大排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my_dict = &#123; <span class="string">'Li'</span>:[<span class="string">'A'</span>,<span class="number">1</span>],</div><div class="line">            <span class="string">'Zhang'</span>:[<span class="string">'B'</span>,<span class="number">2</span>]&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(my_dict.iteritems(), key = <span class="keyword">lambda</span> (k,v):operator.itemgetter(<span class="number">1</span>)(v))</div></pre></td></tr></table></figure></p>
+<h4 id="List-混合字典排序"><a href="#List-混合字典排序" class="headerlink" title="List 混合字典排序"></a>List 混合字典排序</h4><p>按照 list 中 rating 和 name 进行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gameresult = [&#123;<span class="string">"name"</span>:<span class="string">"Bob"</span>, <span class="string">"wins"</span>:<span class="number">10</span>, <span class="string">"losses"</span>:<span class="number">3</span>, <span class="string">"rating"</span>:<span class="number">75</span>&#125;,</div><div class="line">                             &#123;<span class="string">"name"</span>:<span class="string">"David"</span>, <span class="string">"wins"</span>:<span class="number">3</span>, <span class="string">"losses"</span>:<span class="number">10</span>, <span class="string">"rating"</span>:<span class="number">50</span>&#125;]</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="string">"rating"</span>, <span class="string">'name'</span>))</div></pre></td></tr></table></figure></p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ul>
+<li>sort() 不需要复制原有列表，消耗内存较少，效率较高，不需要保存原有列表，可以选择 sort()</li>
+<li>key 比 cmp 效率更高</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/16/my-first-blog/" itemprop="url">
                   my-first-blog
                 </a>
@@ -1005,129 +1026,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/16/python-sort/" itemprop="url">
-                  强大的sort
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-16T22:33:57+08:00" content="2016-10-16">
-              2016-10-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>sorted(iterable[, cmp[, key[, reverse]]])<br>sort([cmp[, key[, reverse]]])</p>
-<p>cmp: 比较函数，参数为两个可比较的参数<br>key: 带一个参数的函数，用来为每个元素提取比较值</p>
-<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><h4 id="对字典排序"><a href="#对字典排序" class="headerlink" title="对字典排序"></a>对字典排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">phonebook = &#123;<span class="string">'Linda'</span>: <span class="string">'7790'</span>, <span class="string">'Bob'</span>:<span class="string">'9876'</span>, <span class="string">'Carol'</span>:<span class="string">'6754'</span>&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted_pb = sorted(phonebook.iteritems(), key = itemgetter(<span class="number">1</span>))</div></pre></td></tr></table></figure>
-<h4 id="多维-list-排序"><a href="#多维-list-排序" class="headerlink" title="多维 list 排序"></a>多维 list 排序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">gameresult = [[<span class="string">'Bob'</span>, <span class="number">95</span>, <span class="string">'A'</span>], [<span class="string">'Alan'</span>, <span class="number">86</span>, <span class="string">'B'</span>]] <span class="comment">## 分别代表学生的姓名，成绩，等级</span></div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="number">2</span>, <span class="number">1</span>))</div></pre></td></tr></table></figure>
-<p>按照等级排序，等级相同时，按成绩排序</p>
-<h4 id="字典混合-list-排序"><a href="#字典混合-list-排序" class="headerlink" title="字典混合 list 排序"></a>字典混合 list 排序</h4><p>对字典 my_dict 的 value 结构 [n, m] 中的 m 按照从小到大排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my_dict = &#123; <span class="string">'Li'</span>:[<span class="string">'A'</span>,<span class="number">1</span>],</div><div class="line">            <span class="string">'Zhang'</span>:[<span class="string">'B'</span>,<span class="number">2</span>]&#125;</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(my_dict.iteritems(), key = <span class="keyword">lambda</span> (k,v):operator.itemgetter(<span class="number">1</span>)(v))</div></pre></td></tr></table></figure></p>
-<h4 id="List-混合字典排序"><a href="#List-混合字典排序" class="headerlink" title="List 混合字典排序"></a>List 混合字典排序</h4><p>按照 list 中 rating 和 name 进行排序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gameresult = [&#123;<span class="string">"name"</span>:<span class="string">"Bob"</span>, <span class="string">"wins"</span>:<span class="number">10</span>, <span class="string">"losses"</span>:<span class="number">3</span>, <span class="string">"rating"</span>:<span class="number">75</span>&#125;,</div><div class="line">                             &#123;<span class="string">"name"</span>:<span class="string">"David"</span>, <span class="string">"wins"</span>:<span class="number">3</span>, <span class="string">"losses"</span>:<span class="number">10</span>, <span class="string">"rating"</span>:<span class="number">50</span>&#125;]</div><div class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter</div><div class="line">sorted(gameresult, key = operator.itemgetter(<span class="string">"rating"</span>, <span class="string">'name'</span>))</div></pre></td></tr></table></figure></p>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ul>
-<li>sort() 不需要复制原有列表，消耗内存较少，效率较高，不需要保存原有列表，可以选择 sort()</li>
-<li>key 比 cmp 效率更高</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1169,7 +1067,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
