@@ -310,19 +310,19 @@
         
           
             <h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><blockquote>
-<p>learn-python-the-hard-way<a href="https://flyouting.gitbooks.io/learn-python-the-hard-way-cn/content/" target="_blank" rel="external">^1</a></p>
+<p><a href="https://flyouting.gitbooks.io/learn-python-the-hard-way-cn/content/" target="_blank" rel="external">learn-python-the-hard-way</a></p>
 </blockquote>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><blockquote>
-<p>鸟哥的linux私房菜<a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php" target="_blank" rel="external">^2</a></p>
+<p><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php" target="_blank" rel="external">鸟哥的linux私房菜</a></p>
 </blockquote>
 <h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><blockquote>
 <p>R in action</p>
 </blockquote>
 <h1 id="Practics"><a href="#Practics" class="headerlink" title="Practics"></a>Practics</h1><blockquote>
-<p>建立合适的目录存放每步生成的文件<br>留存每步分析的脚本</p>
+<p>建立合适的目录存放每步生成的文件；<br>留存每步分析的脚本。</p>
 </blockquote>
 <h2 id="mission-1"><a href="#mission-1" class="headerlink" title="mission 1"></a>mission 1</h2><blockquote>
-<p><strong>使用 FastQC<a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/" target="_blank" rel="external">^3</a> 对 fastq 文件进行质控</strong></p>
+<p><strong>使用 <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/" target="_blank" rel="external">FastQC</a> 对 fastq 文件进行质控</strong></p>
 </blockquote>
 <h3 id="数据路径："><a href="#数据路径：" class="headerlink" title="数据路径："></a>数据路径：</h3><p>OM-mRNA-dujuanhua-P20161221</p>
 <h3 id="任务要求："><a href="#任务要求：" class="headerlink" title="任务要求："></a>任务要求：</h3><ol>
@@ -332,21 +332,59 @@
 <li>样品GC含量分布图，duplication 比例图绘制。</li>
 </ol>
 <h2 id="mission-2"><a href="#mission-2" class="headerlink" title="mission 2"></a>mission 2</h2><blockquote>
-<p><strong>使用 kallisto<a href="https://pachterlab.github.io/kallisto/" target="_blank" rel="external">^4</a> 对各样品进行定量分析</strong></p>
+<p><strong>使用 <a href="https://pachterlab.github.io/kallisto/" target="_blank" rel="external">kallisto</a> 对各样品进行定量分析</strong></p>
 </blockquote>
 <h3 id="分析物种："><a href="#分析物种：" class="headerlink" title="分析物种："></a>分析物种：</h3><p>中文名：家鸡<br>英文名：chicken<br>拉丁文名：Gallus gallus</p>
 <h3 id="任务要求：-1"><a href="#任务要求：-1" class="headerlink" title="任务要求："></a>任务要求：</h3><ol>
-<li>基本数据格式学习, fastq, fasta, gtf<a href="https://genome.ucsc.edu/FAQ/FAQformat.html" target="_blank" rel="external">^5</a></li>
-<li>数据库学习 ensembl<a href="http://www.ensembl.org/index.html" target="_blank" rel="external">^6</a></li>
-<li>根据分析物种下载分析需要的注释文件</li>
-<li>建立 kallisto 定量的 index 文件</li>
-<li>使用 kallisto 对所有样品进行定量</li>
+<li>基本数据格式学习, fastq, fasta, <a href="https://genome.ucsc.edu/FAQ/FAQformat.html" target="_blank" rel="external">gtf</a>。</li>
+<li>数据库学习 <a href="http://www.ensembl.org/index.html" target="_blank" rel="external">ensembl</a>。</li>
+<li>根据分析物种下载分析需要的注释文件。</li>
+<li>建立 kallisto 定量的 index 文件。</li>
+<li>使用 kallisto 对所有样品进行定量。</li>
 <li>对每个样品的定量结果进行合并作图:<ul>
-<li>样品表达盒形图，密度图</li>
-<li>计算两两样品间的 pearson correlation 并制作热图</li>
-<li>样品表达 PCA 图</li>
+<li>样品表达盒形图，密度图。</li>
+<li>计算两两样品间的 pearson correlation 并制作热图。</li>
+<li>样品表达 PCA 图。</li>
 </ul>
 </li>
+</ol>
+<h2 id="mission-3"><a href="#mission-3" class="headerlink" title="mission 3"></a>mission 3</h2><blockquote>
+<p><strong>使用 <a href="https://bioconductor.org/packages/release/bioc/html/edgeR.html" target="_blank" rel="external">edgeR</a> 进行差异分析</strong></p>
+</blockquote>
+<h3 id="任务要求：-2"><a href="#任务要求：-2" class="headerlink" title="任务要求："></a>任务要求：</h3><ol>
+<li>学习 <a href="http://bioconductor.org/packages/release/bioc/html/tximport.html" target="_blank" rel="external">tximport</a>, edgeR。</li>
+<li>使用 tximport 整合 kallisto 定量结果，并将转录本的表达量转换为基因的表达量。</li>
+<li>使用 edgeR 进行差异分析。</li>
+<li>对差异分析结果进行作图：<ul>
+<li>差异分析火山图， MA 图。</li>
+<li>差异基因聚类热图。</li>
+<li>差异基因聚类折线图。</li>
+</ul>
+</li>
+</ol>
+<h2 id="mission-4"><a href="#mission-4" class="headerlink" title="mission 4"></a>mission 4</h2><blockquote>
+<p><strong>差异表达基因富集分析</strong></p>
+</blockquote>
+<h3 id="任务要求：-3"><a href="#任务要求：-3" class="headerlink" title="任务要求："></a>任务要求：</h3><ol>
+<li>学习 <a href="http://bioconductor.org/packages/release/bioc/html/goseq.html" target="_blank" rel="external">goseq</a>, <a href="http://bioconductor.org/packages/release/bioc/html/topGO.html" target="_blank" rel="external">topGO</a>, <a href="http://kobas.cbi.pku.edu.cn/" target="_blank" rel="external">KOBAS</a>, <a href="https://bioconductor.org/packages/release/bioc/html/pathview.html" target="_blank" rel="external">pathview</a> 软件并在服务器上配置。</li>
+<li>使用 <a href="http://www.ensembl.org/biomart/martview/6b7e92ad05188fcda1c525d125eafcd5" target="_blank" rel="external">biomart</a> 数据库下载分析物种的 GO 注释 (<a href="https://bioconductor.org/packages/release/bioc/html/biomaRt.html" target="_blank" rel="external">biomaRt</a>可以对biomart数据进行批量下载)。</li>
+<li>使用 goseq 软件对差异基因进行 GO 富集分析并作图。</li>
+<li>使用 topGO 软件绘制 GO 有向无环图。</li>
+<li>使用 KOBAS 软件对差异基因进行 KEGG 富集分析并作图。</li>
+<li>使用 pathview 软件下载 KEGG Pathway 通路图。</li>
+</ol>
+<h2 id="mission-5"><a href="#mission-5" class="headerlink" title="mission 5"></a>mission 5</h2><blockquote>
+<p><strong>使用 <a href="https://github.com/alexdobin/STAR" target="_blank" rel="external">STAR</a> 进行 RNAseq mapping</strong></p>
+</blockquote>
+<ol>
+<li>理解 RNAseq mapping 过程 (可参考此<a href="http://www.mi.fu-berlin.de/wiki/pub/ABI/GenomicsLecture12Materials/rnaseq1.pdf" target="_blank" rel="external">ppt</a>)。</li>
+<li>在家目录下建立目录，并在该目录下配置 STAR 软件。</li>
+<li>使用 STAR 软件进行比对分析：<ul>
+<li>建立参考基因组比对索引文件。</li>
+<li>进行比对。</li>
+</ul>
+</li>
+<li>整理比对结果并作图、</li>
 </ol>
 
           
